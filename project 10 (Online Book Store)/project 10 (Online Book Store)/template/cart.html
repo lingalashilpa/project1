@@ -1,0 +1,149 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+    }
+    
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+    
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+    
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    .book-list {
+        padding: 20px 0;
+        background-color: #fff;
+    }
+    
+    .book-list h2 {
+        text-align: center;
+    }
+    
+    .books {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+    }
+    
+    .book {
+        text-align: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+    }
+    
+    .book img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .book button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    
+    .book button:hover {
+        background-color: #45a049;
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    
+        </style>
+<body>
+    <header>
+        <div class="container">
+            <h1>Online Bookstore</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'books' %}">Books</a></li>
+                    <li><a href="">Cart</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="book-list">
+        <div class="container">
+            <h2>Cart Books</h2>
+            <div class="books">
+                {% if Cart %}
+                    {% for cart in Cart %}
+                    <div class="book">
+                        <img src="{{cart.book.image.url}}" alt="Book">
+                        <h3>{{cart.book.title}}</h3>
+                        <p>{{cart.book.author_name}}</p>
+                        <p>${{cart.book.price}}</p>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                <p>NO Record</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Online Bookstore. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
