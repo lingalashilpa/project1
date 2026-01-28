@@ -44,12 +44,15 @@ An **Online Book Store** is a web-based application that allows users to browse,
 
 ---
 
-## ⚙️ Installation & Setup
+##▶️How to Run the Project (Step-by-Step)
 
-1. Clone the repository
+Clone this repository:
 
-  https://github.com/lingalashilpa/project1.git
+https://github.com/lingalashilpa/project1.git
 
+Open index.html in your browser:
+
+Double-click index.html Or right-click and open with your preferred browser.
 ## 🗂️ Database Schema (Basic)
 
 * **Users** (user_id, name, email, password, role)
