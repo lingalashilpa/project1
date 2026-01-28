@@ -48,37 +48,7 @@ An **Online Book Store** is a web-based application that allows users to browse,
 
 1. Clone the repository
 
-   ```bash
-   git clone https://github.com/your-username/online-book-store.git
-   ```
-
-2. Navigate to the project directory
-
-   ```bash
-   cd online-book-store
-   ```
-
-3. Install dependencies
-
-   ```bash
-   npm install  # or pip install -r requirements.txt
-   ```
-
-4. Configure the database in the config file
-
-5. Run the application
-
-   ```bash
-   npm start  # or python manage.py runserver
-   ```
-
-6. Open the browser and visit:
-
-   ```
-   http://localhost:3000
-   ```
-
----
+  https://github.com/lingalashilpa/project1.git
 
 ## 🗂️ Database Schema (Basic)
 
